@@ -38,3 +38,8 @@ export interface OrderRequest extends IBuyer {
   total: number;
   items: string[];
 }
+
+export interface IOrderResult {
+  id: string;
+  total: number;
+}

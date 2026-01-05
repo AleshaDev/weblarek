@@ -196,4 +196,4 @@ interface IBuyer {
 
 Методы:
 `getProducts(): Promise<IProduct[]>` - выполняет GET‑запрос к эндпоинту /product/ и возвращает массив товаров.
-`postOrder(orderData: { buyer: IBuyer; items: IProduct[] }): Promise<any>` - выполняет POST‑запрос к эндпоинту /order/ с данными заказа.
+`postOrder(orderData: { buyer: IBuyer; items: IProduct[] }): Promise<IOrderResult>` - выполняет POST‑запрос к эндпоинту /order/ с данными заказа.
