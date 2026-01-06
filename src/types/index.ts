@@ -8,6 +8,7 @@ export interface IApi {
     method?: ApiPostMethods
   ): Promise<T>;
 }
+
 export type TPayment = "card" | "cash" | "online";
 
 export interface IProduct {
@@ -26,6 +27,23 @@ export interface IBuyer {
   address: string;
 }
 
+export interface IOrderForm {
+  email?: string;
+  phone?: string;
+  address?: string;
+  payment?: string;
+}
+
+export interface IOrder extends IBuyer {
+  items: string[];
+  total: number;
+}
+
+export interface IOrderResult {
+  id: string;
+  total: number;
+}
+
 export type ValidationResult = {
   [key in keyof IBuyer]?: string;
 };
@@ -39,7 +57,7 @@ export interface OrderRequest extends IBuyer {
   items: string[];
 }
 
-export interface IOrderResult {
-  id: string;
-  total: number;
+export interface IFormState {
+  valid: boolean;
+  errors: string[];
 }
